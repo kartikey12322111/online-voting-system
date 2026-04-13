@@ -32,7 +32,7 @@ if (isset($_SESSION['message'])) {
 }
 
 // Fetch recent polls for the Recent Polls section
-$recent_polls_sql = "SELECT p.id, p.title, p.category, p.created_at, p.image_url, COUNT(v.id) as vote_count 
+$recent_polls_sql = "SELECT p.id, p.title, p.category, p.created_at, COUNT(v.id) as vote_count 
                      FROM polls p 
                      LEFT JOIN votes v ON p.id = v.poll_id 
                      GROUP BY p.id 
@@ -490,7 +490,7 @@ $recent_polls_result = $conn->query($recent_polls_sql);
             </div>
             <div class="mt-8 pt-6 border-t border-gray-700 text-center text-gray-400 fade-in-delay-2">
                 <p>© 2025 VotePoll. All rights reserved. </p>
-                <p class="text-white text-extra-bold hover:underline text-2xl">Made by:- Harsh, Rounak, Nitin and Dilip </p>
+                <p class="text-white text-extra-bold hover:underline text-2xl">Made by:- Kartikey only </p>
             </div>
         </div>
     </footer>

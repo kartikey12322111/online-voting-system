@@ -21,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Fetch all polls (no user_id filter)
-$sql = "SELECT p.id, p.title, p.category, p.created_at, p.image_url, COUNT(v.id) as vote_count 
+$sql = "SELECT p.id, p.title, p.category, p.created_at, COUNT(v.id) as vote_count 
         FROM polls p 
         LEFT JOIN votes v ON p.id = v.poll_id 
         GROUP BY p.id 
